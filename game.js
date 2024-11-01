@@ -1,5 +1,8 @@
 let computerChoice;
 let playerChoice;
+let playerScore = 0;
+let computerScore = 0;
+let roundNumber = 1;
 
 //the computer randomly selects one of three choices in the background
 function getComputerChoice()
@@ -20,7 +23,6 @@ function getComputerChoice()
     return computerChoice;
 }
 
-console.log("Computer chooses: " + getComputerChoice());
 //the user enters 1, 2, or 3 to signify their choice of rock, paper, or scissors
 function getUserChoice()
 {
@@ -30,19 +32,19 @@ function getUserChoice()
         if(playerChoice == "1")
         {
             console.log("You chose Rock!");
-            playerChoice = 1;
+            playerChoice = String("Rock");
             return playerChoice;
         }
         else if (playerChoice == "2")
         {
             console.log("You chose Paper!");
-            playerChoice = 2;
+            playerChoice = String("Paper");
             return playerChoice;
         }
         else if (playerChoice == "3")
         {
             console.log("You chose Scissors!");
-            playerChoice = 3;
+            playerChoice = String("Scissors");
             return playerChoice;
         }
         else
@@ -50,14 +52,51 @@ function getUserChoice()
             console.log("Invalid entry! Please try again!");
         }
     }
-    while (playerChoice != 1 || playerChoice != 2 || playerChoice != 3);
+    while (playerChoice != "Rock" || playerChoice != "Paper" || playerChoice != "Scissors");
 }
 
-console.log(getUserChoice());
 //the code will then compare the results and check to see which side won taht round and add one to the winner's score
 function gameRound(playerChoice, computerChoice)
 {
-    
+    if (playerChoice == computerChoice)
+    {
+        console.log(playerChoice + " is equal to " + computerChoice + ". Round " + roundNumber + " is a tie!");
+    }
+    else if (playerChoice == "Rock" && computerChoice == "Scissors")
+    {
+        console.log(playerChoice + " beats " + computerChoice + "! Player wins Round " + roundNumber);
+        playerScore++;
+    }
+    else if (playerChoice == "Rock" && computerChoice == "Paper")
+    {
+        console.log(computerChoice + " beats " + playerChoice + "! Computer wins Round " + roundNumber);
+        computerScore++;
+    }
+    else if (playerChoice == "Paper" && computerChoice == "Scissors")
+    {
+        console.log(computerChoice + " beats " + playerChoice + "! Computer wins Round " + roundNumber);
+        computerScore++;
+    }
+    else if(playerChoice == "Paper" && computerChoice == "Rock")
+    {
+        console.log(playerChoice + " beats " + computerChoice + "! Player wins Round " + roundNumber);
+        playerScore++;
+    }
+    else if(playerChoice == "Scissors" && computerChoice == "Paper")
+    {
+        console.log(playerChoice + " beats " + computerChoice + "! Player wins Round " + roundNumber);
+        playerScore++;
+    }
+    else if(playerChoice == "Scissors" && computerChoice == "Rock")
+    {
+        console.log(computerChoice + " beats " + playerChoice + "! Computer wins Round " + roundNumber);
+        computerScore++;
+    }
+    roundNumber++;
 }
+
+computerChoice = getComputerChoice();
+playerChoice = getUserChoice();
+gameRound(playerChoice, computerChoice);
 //the game will then move on to the next round until a total of 5 rounds have been played
 //the winnder will be determined based on who won the most out of the 5 rounds
