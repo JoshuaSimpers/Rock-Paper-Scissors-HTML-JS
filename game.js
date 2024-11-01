@@ -92,11 +92,31 @@ function gameRound(playerChoice, computerChoice)
         console.log(computerChoice + " beats " + playerChoice + "! Computer wins Round " + roundNumber);
         computerScore++;
     }
-    roundNumber++;
 }
 
-computerChoice = getComputerChoice();
-playerChoice = getUserChoice();
-gameRound(playerChoice, computerChoice);
 //the game will then move on to the next round until a total of 5 rounds have been played
+function playGame()
+{
+    for (roundNumber = 1; roundNumber <= 5; roundNumber++)
+    {
+        computerChoice = getComputerChoice();
+        playerChoice = getUserChoice();
+        gameRound(playerChoice, computerChoice);
+        console.log("The score is: Computer: " + computerScore + " Player: " + playerScore);
+    }
+    if (playerScore > computerScore)
+    {
+        console.log("The player won more rounds out of the " + roundNumber + " total played. The player wins!");
+    }
+    else if(playerScore < computerScore)
+    {
+        console.log("The computer won more rounds out of the " + roundNumber + " total played. The computer wins!");
+    }
+    else if (playerScore == computerScore)
+    {
+        console.log("Both scores are equal out of the " + roundNumber + " total played. It is a tie!");
+    }
+}
+
+playGame();
 //the winnder will be determined based on who won the most out of the 5 rounds
