@@ -1,3 +1,7 @@
+// Name: Joshua Simpers
+// Assignment: Create an interactive game of Rock Paper Scissors in the console using JavaScript linked to an HTML file
+//Date: Nov-1st-2024
+//File Name: game.js
 let computerChoice;
 let playerChoice;
 let playerScore = 0;
