@@ -55,5 +55,9 @@ function getUserChoice()
 
 console.log(getUserChoice());
 //the code will then compare the results and check to see which side won taht round and add one to the winner's score
+function gameRound(playerChoice, computerChoice)
+{
+    
+}
 //the game will then move on to the next round until a total of 5 rounds have been played
 //the winnder will be determined based on who won the most out of the 5 rounds
