@@ -1,4 +1,26 @@
+let computerChoice;
+let playerChoice;
+
 //the computer randomly selects one of three choices in the background
+function getComputerChoice()
+{
+    computerChoice = Math.random();
+    if(computerChoice <= 0.333)
+    {
+        computerChoice = String("Rock");
+    }
+    else if(computerChoice > 0.333 && computerChoice <= 0.666)
+    {
+        computerChoice = String("Paper");
+    }
+    else if(computerChoice > 0.666)
+    {
+        computerChoice = String("Scissors");
+    }
+    return computerChoice;
+}
+
+console.log(getComputerChoice());
 //the user enters 1, 2, or 3 to signify their choice of rock, paper, or scissors
 //the code will then compare the results and check to see which side won taht round and add one to the winner's score
 //the game will then move on to the next round until a total of 5 rounds have been played
