@@ -2,7 +2,7 @@ let computerChoice;
 let playerChoice;
 let playerScore = 0;
 let computerScore = 0;
-let roundNumber = 1;
+let roundNumber = 0;
 
 //the computer randomly selects one of three choices in the background
 function getComputerChoice()
@@ -106,17 +106,17 @@ function playGame()
     }
     if (playerScore > computerScore)
     {
-        console.log("The player won more rounds out of the " + roundNumber + " total played. The player wins!");
+        console.log("The player won more rounds out of the 5 total played. The player wins!");
     }
     else if(playerScore < computerScore)
     {
-        console.log("The computer won more rounds out of the " + roundNumber + " total played. The computer wins!");
+        console.log("The computer won more rounds out of the 5 total played. The computer wins!");
     }
     else if (playerScore == computerScore)
     {
-        console.log("Both scores are equal out of the " + roundNumber + " total played. It is a tie!");
+        console.log("Both scores are equal out of the 5 total played. It is a tie!");
     }
 }
 
 playGame();
-//the winnder will be determined based on who won the most out of the 5 rounds
+//the winnder will be determined based on who won the most out of the 5 rounds. This is done in the playGame() function
