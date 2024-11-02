@@ -59,7 +59,7 @@ function getUserChoice()
     while (playerChoice != "Rock" || playerChoice != "Paper" || playerChoice != "Scissors");
 }
 
-//the code will then compare the results and check to see which side won taht round and add one to the winner's score
+//the code will then compare the results and check to see which side won that round and add one point to the winner's score
 function gameRound(playerChoice, computerChoice)
 {
     if (playerChoice == computerChoice)
