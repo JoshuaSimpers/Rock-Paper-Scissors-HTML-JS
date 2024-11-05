@@ -101,6 +101,7 @@ function gameRound(playerChoice, computerChoice)
 //the game will then move on to the next round until a total of 5 rounds have been played
 function playGame()
 {
+    /*
     for (roundNumber = 1; roundNumber <= 5; roundNumber++)
     {
         computerChoice = getComputerChoice();
@@ -108,6 +109,7 @@ function playGame()
         gameRound(playerChoice, computerChoice);
         console.log("The score is: Computer: " + computerScore + " Player: " + playerScore);
     }
+        */
     if (playerScore > computerScore)
     {
         console.log("The player won more rounds out of the 5 total played. The player wins!");
@@ -122,5 +124,14 @@ function playGame()
     }
 }
 
-playGame();
+const container = document.querySelector("#container");
+//three buttons for player choice
+const rockButton = document.createElement("button");
+const paperButton = document.createElement("button");
+const scissorsButton = document.createElement("button");
+
+rockButton.textContent = "ROCK";
+paperButton.textContent = "PAPER";
+scissorsButton.textContent = "SCISSORS";
+
 //the winnder will be determined based on who won the most out of the 5 rounds. This is done in the playGame() function
